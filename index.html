@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SAB Digital Solutions — Websites built around your business</title>
+  <meta name="description" content="SAB Digital Solutions is a digital studio creating custom websites, booking platforms and online stores for businesses.">
+  <meta name="theme-color" content="#101B2C">
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+  <!-- Fonts: The Seasons (large headlines, licensed — see assets/fonts/README.txt) + Bodoni Moda (display fallback/numerals)
+       + Hanken Grotesk (body) · Amiri + IBM Plex Sans Arabic (Arabic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Runs before first paint: restores the saved language so there is no flash of the wrong direction -->
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      try { if (localStorage.getItem('sab-lang') === 'ar') { d.lang = 'ar'; d.dir = 'rtl'; } } catch (e) {}
+    })();
+  </script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+<a class="skip" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+<!-- =====================================================================
+     HEADER
+     ===================================================================== -->
+<header class="header" id="header">
+  <div class="header__inner container">
+    <a class="brand" href="#home" aria-label="SAB Digital Solutions">
+      <img src="assets/images/logo.png" alt="SAB Digital Solutions" width="745" height="361">
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Primary" data-i18n-attr="aria-label:a11y.nav">
+      <ul class="nav__list">
+        <li><a href="#home"     data-nav="home"><span data-i18n="nav.home">Home</span></a></li>
+        <li><a href="#about"    data-nav="about"><span data-i18n="nav.about">About</span></a></li>
+        <li><a href="#services" data-nav="services"><span data-i18n="nav.services">Services</span></a></li>
+        <li><a href="#work"     data-nav="work"><span data-i18n="nav.work">Work</span></a></li>
+        <li><a href="#process"  data-nav="process"><span data-i18n="nav.process">Process</span></a></li>
+        <li><a href="#contact"  data-nav="contact"><span data-i18n="nav.contact">Contact</span></a></li>
+      </ul>
+      <a class="btn btn--gold nav__cta" href="#contact" data-i18n="hero.cta2">Let's Work Together</a>
+    </nav>
+
+    <div class="header__actions">
+      <div class="lang" role="group" aria-label="Language" data-i18n-attr="aria-label:a11y.lang">
+        <button type="button" data-lang="en" aria-pressed="true" aria-label="English">EN</button>
+        <span class="lang__sep" aria-hidden="true">|</span>
+        <button type="button" data-lang="ar" aria-pressed="false" aria-label="العربية" lang="ar">AR</button>
+      </div>
+      <a class="btn btn--outline header__cta"
+   href="https://wa.me/970598107206?text=Hi%21%20I%20came%20across%20your%20portfolio%20and%20I%27m%20interested%20in%20creating%20a%20website%20for%20my%20business."
+   target="_blank"
+   rel="noopener noreferrer"
+   data-i18n="header.cta">Let's Talk</a>
+      <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Menu" data-i18n-attr="aria-label:a11y.menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- =====================================================================
+     HERO
+     ===================================================================== -->
+<section class="hero" id="home" aria-labelledby="hero-title">
+  <div class="hero__lines" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <h1 class="hero__title split" id="hero-title" data-split data-i18n="hero.title">Websites built around what your business actually needs.</h1>
+      <p class="hero__sub reveal" style="--d:520ms" data-i18n="hero.sub">SAB Digital Solutions is a digital studio creating professional websites and digital experiences for businesses. Open any device below to watch a real demo.</p>
+      <div class="hero__cta reveal" style="--d:640ms">
+        <a class="btn btn--light" href="#work"><span data-i18n="hero.cta1">Explore Our Work</span></a>
+        <a class="btn btn--ghost" href="#contact"><span data-i18n="hero.cta2">Let's Work Together</span></a>
+      </div>
+    </div>
+
+    <!-- Live device composition: real screenshots inside CSS device frames -->
+    <div class="hero__stage" role="group" aria-label="Featured website demos" data-i18n-attr="aria-label:a11y.heroDemos">
+      <span class="ring ring--a" aria-hidden="true"><i class="ring__dot"></i></span>
+      <span class="ring ring--b" aria-hidden="true"></span>
+
+      <!-- One laptop (JUDE Beauty Clinic) + one smartphone (POWER FITNESS) -->
+      <div class="hp hp--laptop" style="--depth:-0.6">
+        <button type="button" class="device-btn" data-open="jude-clinic" data-cursor>
+            <span class="laptop"><span class="laptop__lid"><span class="laptop__cam"></span><span class="laptop__screen">
+              <img src="assets/projects/jude-clinic.jpg" width="1280" height="606" alt="The JUDE Beauty Clinic website shown on a laptop" data-i18n-attr="alt:projects.jude-clinic.alt" decoding="async">
+            </span></span><span class="laptop__base"></span></span>
+          </button>
+      </div>
+
+
+
+
+      <div class="hp hp--phone" style="--depth:1.3">
+  <button
+    type="button"
+    class="device-btn"
+    data-open="jude-clinic"
+    data-video="assets/videos/jude-clinic-mobile.mp4"
+    data-device="phone"
+    data-poster="assets/projects/jude-clinic-mobile.jpg"
+    data-cursor
+  >
+    <span class="phone">
+      <span class="phone__body">
+        <span class="phone__screen">
+          <img
+            src="assets/projects/jude-clinic-mobile.jpg"
+            width="591"
+            height="1060"
+            alt="The JUDE Beauty Clinic website shown on a smartphone"
+            decoding="async"
+          >
+        </span>
+      </span>
+    </span>
+  </button>
+</div>
+    </div>
+  </div>
+
+  <div class="container hero__foot">
+    <a class="scroll-cue" href="#about" aria-label="Scroll" data-i18n-attr="aria-label:a11y.scroll">
+      <span class="scroll-cue__line" aria-hidden="true"></span>
+      <span data-i18n="hero.scroll">Scroll</span>
+    </a>
+    <div class="hero__demos">
+      <span class="hero__demos-label" data-i18n="hero.demos">Demos</span>
+      <ol>
+        <li><button type="button" data-open="more-cafe"><span class="n">01</span><span data-i18n="projects.more-cafe.name">MORE Café</span></button></li>
+        <li><button type="button" data-open="la-lune"><span class="n">02</span><span data-i18n="projects.la-lune.name">La Lune</span></button></li>
+        <li><button type="button" data-open="jude-clinic"><span class="n">03</span><span data-i18n="projects.jude-clinic.name">JUDE Beauty Clinic</span></button></li>
+        <li><button type="button" data-open="institute"><span class="n">04</span><span data-i18n="projects.institute.name">Alahd</span></button></li>
+        <li><button type="button" data-open="power-fitness"><span class="n">05</span><span data-i18n="projects.power-fitness.name">POWER FITNESS</span></button></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     ABOUT
+     ===================================================================== -->
+<section class="section about" id="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="about__grid">
+      <div class="about__copy">
+        <span class="rule" aria-hidden="true"></span>
+        <h2 class="display split" id="about-title" data-split data-i18n="about.title">Custom websites, designed around how businesses actually work.</h2>
+        <p class="lead reveal" data-i18n="about.body">SAB Digital Solutions creates websites that fit the business behind them: clear, credible, and easy to use for the people who matter most — your customers.</p>
+      </div>
+
+      <div class="about__plate reveal" style="--d:150ms" aria-hidden="true">
+        <span class="plate__tick plate__tick--tl"></span><span class="plate__tick plate__tick--tr"></span>
+        <span class="plate__tick plate__tick--bl"></span><span class="plate__tick plate__tick--br"></span>
+        <img src="assets/images/logo.png" alt="" width="745" height="361" loading="lazy">
+        <span class="plate__caption" data-i18n="about.plate">Digital Solutions</span>
+      </div>
+    </div>
+
+    <div class="benefits reveal">
+      <h3 class="benefits__title" data-i18n="about.listTitle">A website can help your business</h3>
+      <ul class="benefits__list">
+        <li data-i18n="about.i1">Present its services</li>
+        <li data-i18n="about.i2">Build credibility</li>
+        <li data-i18n="about.i3">Get more bookings</li>
+        <li data-i18n="about.i4">Make information easy to find</li>
+        <li data-i18n="about.i5">Sell products online</li>
+        <li data-i18n="about.i6">Create a stronger digital presence</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================================
+     SERVICES
+     ===================================================================== -->
+<section class="section services" id="services" aria-labelledby="services-title">
+  <div class="container">
+    <div class="section__head">
+      <span class="rule" aria-hidden="true"></span>
+      <h2 class="display split" id="services-title" data-split data-i18n="services.title">What we build</h2>
+    </div>
+
+    <ul class="service-list">
+      <li class="service reveal">
+        <span class="service__num">01</span>
+        <h3 class="service__title" data-i18n="services.s1.title">Business Websites</h3>
+        <p class="service__text" data-i18n="services.s1.text">Professional websites tailored to the business.</p>
+        <svg class="service__icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="9" width="38" height="30" rx="2.5"/><path d="M5 17h38"/><circle cx="10.5" cy="13" r=".9"/><circle cx="14.5" cy="13" r=".9"/><path d="M12 25h13M12 31h8M31 24h6v8h-6z"/></svg>
+      </li>
+      <li class="service reveal">
+        <span class="service__num">02</span>
+        <h3 class="service__title" data-i18n="services.s2.title">Booking Websites</h3>
+        <p class="service__text" data-i18n="services.s2.text">Websites that make appointments and bookings easier.</p>
+        <svg class="service__icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="10" width="36" height="32" rx="2.5"/><path d="M6 19h36M15 6v8M33 6v8M17 30l5 5 9-10"/></svg>
+      </li>
+      <li class="service reveal">
+        <span class="service__num">03</span>
+        <h3 class="service__title" data-i18n="services.s3.title">E-Commerce</h3>
+        <p class="service__text" data-i18n="services.s3.text">Online stores designed for selling products online.</p>
+        <svg class="service__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M9 16h30l-2.2 24H11.2z"/><path d="M17 20v-4a7 7 0 0 1 14 0v4"/></svg>
+      </li>
+      <li class="service reveal">
+        <span class="service__num">04</span>
+        <h3 class="service__title" data-i18n="services.s4.title">Custom Digital Solutions</h3>
+        <p class="service__text" data-i18n="services.s4.text">Custom functionality based on the business's actual needs.</p>
+        <svg class="service__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M17 15L7 24l10 9M31 15l10 9-10 9M27 11l-6 26"/></svg>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- =====================================================================
+     SELECTED WORK
+     To change a screenshot:  edit the <img src="…"> of that project (it appears in the hero too).
+     To change a video:       edit data-video="…" on that project's <article class="case">.
+     ===================================================================== -->
+<section class="work" id="work" aria-labelledby="work-title">
+  <div class="container">
+    <div class="work__head">
+      <div>
+        <span class="rule" aria-hidden="true"></span>
+        <h2 class="display split" id="work-title" data-split data-i18n="work.title">Selected work</h2>
+      </div>
+      <p class="work__intro reveal" data-i18n="work.intro">Five websites for five different businesses. Each one is shaped by its audience, its language and the way its customers decide. Tap any device to watch the demo.</p>
+    </div>
+
+    <!-- 01 · MORE Café · smartphone -->
+    <article class="case case--a" data-project="more-cafe" data-device="phone" data-video="assets/videos/more-cafe.mp4">
+      <div class="case__info reveal">
+        <p class="case__kicker"><span class="case__num">01</span><span class="rule" aria-hidden="true"></span><span data-i18n="projects.more-cafe.cat">Café / Restaurant</span></p>
+        <h3 class="case__name" data-i18n="projects.more-cafe.name">MORE Café</h3>
+        <p class="case__desc" data-i18n="projects.more-cafe.desc">A warm, atmosphere-first website that turns first-time visitors into regulars.</p>
+        <div class="case__more" id="more-more-cafe" aria-hidden="true">
+          <p data-i18n="projects.more-cafe.longDesc">MORE Café's website is designed for a coffee shop that wants its atmosphere to sell itself before a customer ever walks in.</p>
+        </div>
+        <button type="button" class="case__readmore" data-readmore="more-cafe" aria-expanded="false" aria-controls="more-more-cafe">
+          <span class="case__readmore-label" data-i18n="work.readMore">Read More</span>
+          <svg class="case__readmore-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <button type="button" class="demo-link" data-open="more-cafe"><span class="demo-link__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span><span data-i18n="work.viewDemo">View Demo</span></button>
+      </div>
+      <div class="case__stage stage--circle">
+        <span class="orbit" aria-hidden="true"><i></i></span>
+        <div class="case__device" data-parallax="0.06">
+          <button type="button" class="device-btn" data-open="more-cafe" data-cursor>
+            <span class="phone"><span class="phone__body"><span class="phone__screen">
+              <img src="assets/projects/more-cafe.jpg" width="591" height="1045" alt="The MORE Café website shown on a smartphone" data-i18n-attr="alt:projects.more-cafe.alt" loading="lazy" decoding="async">
+            </span></span></span>
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- 02 · La Lune · smartphone -->
+    <article class="case case--b" data-project="la-lune" data-device="phone" data-video="assets/videos/la-lune.mp4">
+      <div class="case__info reveal">
+        <p class="case__kicker"><span class="case__num">02</span><span class="rule" aria-hidden="true"></span><span data-i18n="projects.la-lune.cat">Women's Beauty Salon</span></p>
+        <h3 class="case__name" data-i18n="projects.la-lune.name">La Lune</h3>
+        <p class="case__desc" data-i18n="projects.la-lune.desc">A calm, right-to-left website that makes booking a beauty appointment effortless.</p>
+        <div class="case__more" id="more-la-lune" aria-hidden="true">
+          <p data-i18n="projects.la-lune.longDesc">La Lune's website is built for a women's beauty salon where trust and comfort matter as much as the services on offer.</p>
+        </div>
+        <button type="button" class="case__readmore" data-readmore="la-lune" aria-expanded="false" aria-controls="more-la-lune">
+          <span class="case__readmore-label" data-i18n="work.readMore">Read More</span>
+          <svg class="case__readmore-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <button type="button" class="demo-link" data-open="la-lune"><span class="demo-link__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span><span data-i18n="work.viewDemo">View Demo</span></button>
+      </div>
+      <div class="case__stage stage--arch">
+        <div class="case__device" data-parallax="0.09">
+          <button type="button" class="device-btn" data-open="la-lune" data-cursor>
+            <span class="phone"><span class="phone__body"><span class="phone__screen">
+              <img src="assets/projects/la-lune.jpg" width="591" height="1041" alt="The La Lune beauty salon website shown on a smartphone" data-i18n-attr="alt:projects.la-lune.alt" loading="lazy" decoding="async">
+            </span></span></span>
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- 03 · JUDE Beauty Clinic · laptop -->
+    <article class="case case--wide" data-project="jude-clinic" data-device="laptop" data-video="assets/videos/jude-clinic.mp4">
+      <div class="case__top">
+        <p class="case__kicker"><span class="case__num">03</span><span class="rule" aria-hidden="true"></span><span data-i18n="projects.jude-clinic.cat">Beauty Clinic</span></p>
+        <h3 class="case__mega" data-i18n="projects.jude-clinic.name">JUDE Beauty Clinic</h3>
+      </div>
+      <div class="case__stage stage--band">
+        <div class="case__device" data-parallax="0.05">
+          <button type="button" class="device-btn" data-open="jude-clinic" data-cursor>
+            <span class="laptop"><span class="laptop__lid"><span class="laptop__cam"></span><span class="laptop__screen">
+              <img src="assets/projects/jude-clinic.jpg" width="1280" height="606" alt="The JUDE Beauty Clinic website shown on a laptop" data-i18n-attr="alt:projects.jude-clinic.alt" loading="lazy" decoding="async">
+            </span></span><span class="laptop__base"></span></span>
+          </button>
+        </div>
+      </div>
+      <div class="case__foot reveal">
+        <div class="case__foot-copy">
+          <p class="case__desc" data-i18n="projects.jude-clinic.desc">A refined clinic website that turns treatment browsing into booked appointments.</p>
+          <div class="case__more" id="more-jude-clinic" aria-hidden="true">
+            <p data-i18n="projects.jude-clinic.longDesc">JUDE Beauty Clinic's website is designed for a medical aesthetics practice where credibility and clarity come first.</p>
+          </div>
+          <button type="button" class="case__readmore" data-readmore="jude-clinic" aria-expanded="false" aria-controls="more-jude-clinic">
+            <span class="case__readmore-label" data-i18n="work.readMore">Read More</span>
+            <svg class="case__readmore-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+        </div>
+        <button type="button" class="demo-link" data-open="jude-clinic"><span class="demo-link__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span><span data-i18n="work.viewDemo">View Demo</span></button>
+      </div>
+    </article>
+
+    <!-- 04 · Alahd (Educational Institute) · laptop -->
+    <article class="case case--c" data-project="institute" data-device="laptop" data-video="assets/videos/alahd.mp4">
+      <div class="case__info reveal">
+        <p class="case__kicker"><span class="case__num">04</span><span class="rule" aria-hidden="true"></span><span data-i18n="projects.institute.cat">Education / Institute</span></p>
+        <h3 class="case__name" data-i18n="projects.institute.name">Alahd</h3>
+        <p class="case__desc" data-i18n="projects.institute.desc">A clear Arabic website that turns program interest into completed registrations.</p>
+        <div class="case__more" id="more-institute" aria-hidden="true">
+          <p data-i18n="projects.institute.longDesc">Alahd's website is built for an educational institute that needs to communicate programs, teachers, schedules and registration without overwhelming a visitor.</p>
+        </div>
+        <button type="button" class="case__readmore" data-readmore="institute" aria-expanded="false" aria-controls="more-institute">
+          <span class="case__readmore-label" data-i18n="work.readMore">Read More</span>
+          <svg class="case__readmore-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <button type="button" class="demo-link" data-open="institute"><span class="demo-link__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span><span data-i18n="work.viewDemo">View Demo</span></button>
+      </div>
+      <div class="case__stage stage--offset">
+        <div class="case__device" data-parallax="0.05">
+          <button type="button" class="device-btn" data-open="institute" data-cursor>
+            <span class="laptop"><span class="laptop__lid"><span class="laptop__cam"></span><span class="laptop__screen">
+              <img src="assets/projects/alahd.jpg" width="1280" height="592" alt="The Alahd educational institute website shown on a laptop" data-i18n-attr="alt:projects.institute.alt" loading="lazy" decoding="async">
+            </span></span><span class="laptop__base"></span></span>
+          </button>
+        </div>
+      </div>
+    </article>
+
+    <!-- 05 · POWER FITNESS · smartphone -->
+    <article class="case case--finale" data-project="power-fitness" data-device="phone" data-video="assets/videos/power-fitness.mp4">
+      <div class="finale">
+        <h3 class="finale__title"><span class="finale__a">POWER</span><span class="finale__b">FITNESS</span></h3>
+        <div class="finale__device case__device" data-parallax="0.05">
+          <button type="button" class="device-btn" data-open="power-fitness" data-cursor>
+            <span class="phone"><span class="phone__body"><span class="phone__screen">
+              <img src="assets/projects/power-fitness.jpg" width="591" height="1060" alt="The POWER FITNESS gym website shown on a smartphone" data-i18n-attr="alt:projects.power-fitness.alt" loading="lazy" decoding="async">
+            </span></span></span>
+          </button>
+        </div>
+      </div>
+      <div class="finale__info reveal">
+        <p class="case__kicker"><span class="case__num">05</span><span class="rule" aria-hidden="true"></span><span data-i18n="projects.power-fitness.cat">Fitness / Gym</span></p>
+        <p class="case__desc" data-i18n="projects.power-fitness.desc">A bold, mobile-first website built to get members through the door.</p>
+        <div class="case__more" id="more-power-fitness" aria-hidden="true">
+          <p data-i18n="projects.power-fitness.longDesc">POWER FITNESS's website is designed for a gym that needs to move people from curiosity to a first visit, fast.</p>
+        </div>
+        <button type="button" class="case__readmore" data-readmore="power-fitness" aria-expanded="false" aria-controls="more-power-fitness">
+          <span class="case__readmore-label" data-i18n="work.readMore">Read More</span>
+          <svg class="case__readmore-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <button type="button" class="demo-link" data-open="power-fitness"><span class="demo-link__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5v11l9-5.5z"/></svg></span><span data-i18n="work.viewDemo">View Demo</span></button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- =====================================================================
+     PROCESS
+     ===================================================================== -->
+<section class="section process" id="process" aria-labelledby="process-title">
+  <div class="container">
+    <div class="section__head">
+      <span class="rule" aria-hidden="true"></span>
+      <h2 class="display split" id="process-title" data-split data-i18n="process.title">From first conversation to launch</h2>
+    </div>
+
+    <ol class="steps">
+      <li class="step reveal" style="--i:0">
+        <span class="step__num">01</span>
+        <h3 class="step__title" data-i18n="process.p1.title">Discover</h3>
+        <p class="step__text" data-i18n="process.p1.text">Understand the business and its goals.</p>
+      </li>
+      <li class="step reveal" style="--i:1">
+        <span class="step__num">02</span>
+        <h3 class="step__title" data-i18n="process.p2.title">Design</h3>
+        <p class="step__text" data-i18n="process.p2.text">Create the visual direction and user experience.</p>
+      </li>
+      <li class="step reveal" style="--i:2">
+        <span class="step__num">03</span>
+        <h3 class="step__title" data-i18n="process.p3.title">Build</h3>
+        <p class="step__text" data-i18n="process.p3.text">Develop the website and functionality.</p>
+      </li>
+      <li class="step reveal" style="--i:3">
+        <span class="step__num">04</span>
+        <h3 class="step__title" data-i18n="process.p4.title">Launch</h3>
+        <p class="step__text" data-i18n="process.p4.text">Test, refine and launch the final website.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- =====================================================================
+     CONTACT
+     Replace the placeholder links / labels below with your real details.
+     ===================================================================== -->
+<section class="contact" id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <span class="rule" aria-hidden="true"></span>
+    <h2 class="contact__title split" id="contact-title" data-split data-i18n="contact.title">Your business deserves a digital home.</h2>
+
+    <div class="contact__grid">
+      <div class="contact__lead reveal">
+        <p data-i18n="contact.text">Let's build a website that makes your business easier to discover, understand and choose.</p>
+        <a class="btn btn--light btn--lg" href="mailto:sabaabusalah22@gmail.com?subject=New%20project"><span data-i18n="contact.cta">Start a Project</span></a>
+      </div>
+
+      <ul class="channels reveal" style="--d:120ms">
+        <li>
+          <a href="https://www.instagram.com/sab_dig_sol?stkn=MW5oNXIyNjN0dzBtMQ==" target="_blank" rel="noopener">
+            <span class="channels__label" data-i18n="contact.instagram">Instagram</span>
+            <span class="channels__value" dir="ltr">@sab_dig_sol</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/share/1Er2h8mDv1/" target="_blank" rel="noopener">
+            <span class="channels__label" data-i18n="contact.facebook">Facebook</span>
+            <span class="channels__value" dir="ltr">SAB Digital Solutions</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://wa.me/97098107206" target="_blank" rel="noopener">
+            <span class="channels__label" data-i18n="contact.whatsapp">WhatsApp</span>
+            <span class="channels__value" dir="ltr">+970 98 107 206</span>
+          </a>
+        </li>
+        <li>
+          <a href="mailto:sabaabusalah22@gmail.com">
+            <span class="channels__label" data-i18n="contact.email">Email</span>
+            <span class="channels__value" dir="ltr">sabaabusalah22@gmail.com</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <a class="brand" href="#home" aria-label="SAB Digital Solutions"><img src="assets/images/logo.png" alt="SAB Digital Solutions" width="745" height="361" loading="lazy"></a>
+    <p class="footer__copy">© <span id="year">2026</span> SAB Digital Solutions. <span data-i18n="footer.rights">All rights reserved.</span></p>
+    <a class="footer__top" href="#home" data-i18n="footer.top">Back to top</a>
+  </div>
+</footer>
+
+<!-- Cursor label shown when hovering a device (desktop only) -->
+<div class="cursor" id="cursor" aria-hidden="true"><span data-i18n="work.viewDemo">View Demo</span></div>
+
+<!-- =====================================================================
+     DEMO MODAL
+     ===================================================================== -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc" hidden>
+  <div class="modal__backdrop" data-close></div>
+  <div class="modal__panel" id="modal-panel" data-device="phone" tabindex="-1">
+    <span class="modal__line" aria-hidden="true"></span>
+    <button type="button" class="modal__close" data-close aria-label="Close demo" data-i18n-attr="aria-label:modal.close">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+
+    <div class="modal__stage" id="modal-stage">
+      <video id="modal-video" controls playsinline preload="none"></video>
+      <div class="modal__loading" aria-live="polite"><span class="spinner" aria-hidden="true"></span><span data-i18n="modal.loading">Loading demo…</span></div>
+      <div class="modal__error" role="status">
+        <p data-i18n="modal.unavailable">This demo video isn't available yet.</p>
+        <p class="modal__hint" data-i18n="modal.unavailableHint">Add the video file to the assets/videos folder.</p>
+      </div>
+    </div>
+
+    <div class="modal__info">
+      <p class="modal__count" id="modal-count">01 / 05</p>
+      <h3 class="modal__title" id="modal-title">Project</h3>
+      <ul class="modal__tags" id="modal-tags"></ul>
+      <p class="modal__desc" id="modal-desc"></p>
+      <div class="modal__nav">
+        <button type="button" class="modal__step" id="modal-prev">
+          <svg class="ico-arrow ico-arrow--prev" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+          <span data-i18n="modal.prev">Previous</span>
+        </button>
+        <button type="button" class="modal__step" id="modal-next">
+          <span data-i18n="modal.next">Next</span>
+          <svg class="ico-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="translations.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
