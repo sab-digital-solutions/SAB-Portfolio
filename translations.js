@@ -67,7 +67,8 @@ window.SAB_I18N = {
       s1: { title: "Business Websites", text: "Professional websites tailored to the business." },
       s2: { title: "Booking Websites", text: "Websites that make appointments and bookings easier." },
       s3: { title: "E-Commerce", text: "Online stores designed for selling products online." },
-      s4: { title: "Custom Digital Solutions", text: "Custom functionality based on the business's actual needs." }
+      s4: { title: "Custom Digital Solutions", text: "Custom functionality based on the business's actual needs." },
+      s5: { title: "Automation & AI Integration", text: "Smart automations and AI-powered solutions that save time and simplify business workflows."}
     },
 
     work: {
@@ -109,7 +110,7 @@ window.SAB_I18N = {
         alt: "The JUDE Beauty Clinic website shown on a laptop"
       },
       institute: {
-        name: "Alahd",
+        name: "Alahd Institute",
         cat: "Education / Institute",
         lang: "Arabic",
         desc: "A clear Arabic website that turns program interest into completed registrations.",
@@ -213,7 +214,8 @@ window.SAB_I18N = {
       s1: { title: "مواقع الأعمال", text: "مواقع احترافية مصمّمة لتناسب النشاط التجاري." },
       s2: { title: "مواقع الحجوزات", text: "مواقع تجعل حجز المواعيد أسهل." },
       s3: { title: "التجارة الإلكترونية", text: "متاجر إلكترونية مصمّمة لبيع المنتجات عبر الإنترنت." },
-      s4: { title: "حلول رقمية مخصّصة", text: "وظائف مخصّصة مبنية على الاحتياجات الفعلية للنشاط." }
+      s4: { title: "حلول رقمية مخصّصة", text: "وظائف مخصّصة مبنية على الاحتياجات الفعلية للنشاط." },
+      s5: { title: "الأتمتة ودمج الذكاء الاصطناعي", text: "حلول ذكية وأتمتة للمهام تساعد على توفير الوقت وتسهيل سير العمل." }
     },
 
     work: {
@@ -255,7 +257,7 @@ window.SAB_I18N = {
         alt: "موقع JUDE Beauty Clinic معروضًا على حاسوب محمول"
       },
       institute: {
-        name: "Alahd",
+        name: "Alahd Institute",
         cat: "تعليم / معهد",
         lang: "العربية",
         desc: "موقع عربي واضح يحوّل الاهتمام بالبرامج إلى تسجيل فعلي.",
