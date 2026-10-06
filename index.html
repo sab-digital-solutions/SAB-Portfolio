@@ -496,6 +496,33 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
 
+    <!-- Demo view tabs -->
+<div class="modal__tabs" id="modal-tabs" role="tablist" aria-label="Demo views" hidden>
+  <button
+    type="button"
+    class="modal__tab is-active"
+    role="tab"
+    aria-selected="true"
+    aria-controls="modal-stage"
+    data-demo-tab="website"
+    data-i18n="work.website"
+  >
+    Website
+  </button>
+
+  <button
+    type="button"
+    class="modal__tab"
+    role="tab"
+    aria-selected="false"
+    aria-controls="modal-stage"
+    data-demo-tab="dashboard"
+    data-i18n="work.dashboard"
+  >
+    Management Dashboard
+  </button>
+</div>
+
     <div class="modal__stage" id="modal-stage">
       <video id="modal-video" controls playsinline preload="none"></video>
       <div class="modal__loading" aria-live="polite"><span class="spinner" aria-hidden="true"></span><span data-i18n="modal.loading">Loading demo…</span></div>

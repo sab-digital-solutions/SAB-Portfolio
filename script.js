@@ -269,7 +269,8 @@
   const modalDesc = $('#modal-desc');
   const modalTags = $('#modal-tags');
   const modalCount = $('#modal-count');
-
+  const modalTabs = $('#modal-tabs');
+  const demoTabButtons = $$('.modal__tab', modalTabs);
   // Projects are read straight from the markup (data-project / data-device / data-video + the <img> src)
   const projects = $$('.case[data-project]').map((el, index) => {
     const img = $('img', el);
@@ -283,7 +284,47 @@
   });
   const projectById = Object.fromEntries(projects.map((p) => [p.id, p]));
 
-  const modalState = { open: false, current: null, lastFocus: null, timer: 0 };
+ const modalState = {
+  open: false,
+  current: null,
+  lastFocus: null,
+  timer: 0,
+  demoView: 'website',
+  fromHero: false
+};
+
+const judeDemoVideos = {
+  website: {
+    video: 'assets/videos/jude-clinic.mp4',
+    device: 'laptop',
+    poster: ''
+  },
+
+  dashboard: {
+    video: 'assets/videos/jude-dashboard.mp4',
+    device: 'laptop',
+    poster: ''
+  }
+};
+
+function updateDemoTabs() {
+  if (!modalTabs) return;
+
+  const showTabs =
+    modalState.current?.id === 'jude-clinic' &&
+    !modalState.fromHero;
+
+  modalTabs.hidden = !showTabs;
+
+  if (!showTabs) return;
+
+  demoTabButtons.forEach((btn) => {
+    const active = btn.dataset.demoTab === modalState.demoView;
+
+    btn.classList.toggle('is-active', active);
+    btn.setAttribute('aria-selected', String(active));
+  });
+}
 
   function renderModalText() {
     const p = modalState.current;
@@ -298,19 +339,52 @@
   }
 
   /** Point the player at a project's video. Nothing is downloaded until a project is opened. */
-  function loadProject(p) {
-    modalState.current = p;
-    panel.dataset.device = p.device;
-    renderModalText();
+  
+function loadProject(p, view = 'website') {
+  modalState.current = p;
+  modalState.demoView = view;
 
-    video.pause();
-    stage.classList.remove('is-error');
-    stage.classList.add('is-loading');
-    video.poster = p.poster;
-    video.preload = 'metadata';
-    video.src = p.video;      // no autoplay — the visitor presses play
-    video.load();
+  let demo = p;
+
+  if (p.id === 'jude-clinic' && !modalState.fromHero) {
+    const selectedDemo =
+      judeDemoVideos[view] || judeDemoVideos.website;
+
+    demo = {
+      ...p,
+      video: selectedDemo.video,
+      device: selectedDemo.device,
+      poster: selectedDemo.poster
+    };
   }
+
+  panel.dataset.device = demo.device;
+  renderModalText();
+  updateDemoTabs();
+
+  video.pause();
+
+  stage.classList.remove('is-error');
+  stage.classList.add('is-loading');
+
+  if (demo.poster) {
+    video.poster = demo.poster;
+  } else {
+    video.removeAttribute('poster');
+  }
+
+  video.preload = 'metadata';
+  video.src = demo.video;
+  video.load();
+}
+  
+function selectDemoTab(view) {
+  const p = modalState.current;
+
+  if (!p || p.id !== 'jude-clinic') return;
+
+  loadProject(p, view);
+}
 
   video.addEventListener('loadeddata', () => stage.classList.remove('is-loading'));
   video.addEventListener('error', () => {
@@ -319,38 +393,39 @@
     stage.classList.add('is-error');
     console.warn(`[SAB] Demo video not found or unsupported: ${video.getAttribute('src')}`);
   });
+  // Use device-specific settings when provided by the clicked button.
 
   function openModal(id, trigger) {
   const project = projectById[id];
   if (!project) return;
+  modalState.fromHero = Boolean(trigger?.closest('.hero'));
   modal.classList.toggle(
   'modal--hero-demo',
   Boolean(trigger?.closest('.hero'))
 );
 
-  clearTimeout(modalState.timer);
+clearTimeout(modalState.timer);
+modalState.lastFocus = trigger || document.activeElement;
+modalState.open = true;
+hideCursor();
 
-  modalState.lastFocus = trigger || document.activeElement;
-  modalState.open = true;
-  hideCursor();
+const p = {
+  ...project,
+  video: trigger?.dataset.video || project.video,
+  device: trigger?.dataset.device || project.device,
+  poster: trigger?.dataset.poster || project.poster
+};
 
-  // Use device-specific settings when provided by the clicked button.
-  const p = {
-    ...project,
-    video: trigger?.dataset.video || project.video,
-    device: trigger?.dataset.device || project.device,
-    poster: trigger?.dataset.poster || project.poster
-  };
-
-  modal.hidden = false;
-  root.classList.add('is-locked');
-
-  loadProject(p);
-
-  void modal.offsetWidth;
-  modal.classList.add('is-open');
-  panel.focus({ preventScroll: true });
+modal.hidden = false;
+root.classList.add('is-locked');
+loadProject(p, 'website');
+void modal.offsetWidth;
+modal.classList.add('is-open');
+panel.focus({ preventScroll: true });
 }
+
+  
+  
 
   function closeModal() {
     if (!modalState.open) return;
@@ -404,6 +479,12 @@
 
     $('#modal-prev').addEventListener('click', () => stepModal(-1));
     $('#modal-next').addEventListener('click', () => stepModal(1));
+demoTabButtons.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    selectDemoTab(btn.dataset.demoTab);
+  });
+});
+
     burger.addEventListener('click', () => setMenu(!menuOpen));
 
     document.addEventListener('keydown', (e) => {

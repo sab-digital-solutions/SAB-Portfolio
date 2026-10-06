@@ -70,17 +70,19 @@ window.SAB_I18N = {
       s4: { title: "Custom Digital Solutions", text: "Custom functionality based on the business's actual needs." },
       s5: { title: "Automation & AI Integration", text: "Smart automations and AI-powered solutions that save time and simplify business workflows."}
     },
+work: {
+  title: "Selected work",
+  intro: "Five websites for five different businesses. Each one is shaped by its audience, its language and the way its customers decide. Tap any device to watch the demo.",
+  viewDemo: "View Demo",
+  openDemo: "Open demo:",
+  device: "Device",
+  language: "Language",
+  readMore: "Read More",
+  readLess: "Read Less",
+  website: "Website",
+  dashboard: "Management Dashboard"
+},
 
-    work: {
-      title: "Selected work",
-      intro: "Five websites for five different businesses. Each one is shaped by its audience, its language and the way its customers decide. Tap any device to watch the demo.",
-      viewDemo: "View Demo",
-      openDemo: "Open demo:",
-      device: "Device",
-      language: "Language",
-      readMore: "Read More",
-      readLess: "Read Less"
-    },
 
     devices: { phone: "Smartphone", laptop: "Laptop" },
 
@@ -94,7 +96,7 @@ window.SAB_I18N = {
         alt: "The MORE Café website shown on a smartphone"
       },
       "la-lune": {
-        name: "La Lune",
+        name: "La Lune Women's Salon",
         cat: "Women's Beauty Salon",
         lang: "Arabic",
         desc: "A calm, right-to-left website that makes booking a beauty appointment effortless.",
@@ -106,7 +108,7 @@ window.SAB_I18N = {
         cat: "Beauty Clinic",
         lang: "English",
         desc: "A refined clinic website that turns treatment browsing into booked appointments.",
-        longDesc: "JUDE Beauty Clinic's website is designed for a medical aesthetics practice where credibility and clarity come first. Treatments and doctors are presented with the kind of polish that reassures a prospective patient before they've spoken to anyone, and the booking flow is built to remove friction at the exact moment someone decides they're interested. Information is organized so visitors can find a specific treatment quickly rather than scrolling through everything. For a clinic owner, a site like this markets the practice around the clock and pre-qualifies enquiries, so staff spend less time answering basic questions and more time with patients.",
+        longDesc: "JUDE Beauty Clinic combines a refined patient-facing website with a dedicated management experience behind the scenes. The website makes treatments, doctors, and booking easy to explore, while the management dashboard gives clinic staff a clear way to handle appointments, patients, treatments, messages, and daily operations. Together, they create a digital experience that not only represents the clinic professionally, but also supports the way it operates every day.",
         alt: "The JUDE Beauty Clinic website shown on a laptop"
       },
       institute: {
@@ -219,15 +221,17 @@ window.SAB_I18N = {
     },
 
     work: {
-      title: "أعمال مختارة",
-      intro: "خمسة مواقع لخمسة أنشطة مختلفة. يتشكّل كل موقع وفق جمهوره ولغته وطريقة اتخاذ عملائه للقرار. اضغط على أي جهاز لمشاهدة العرض.",
-      viewDemo: "شاهد العرض",
-      openDemo: "افتح العرض:",
-      device: "الجهاز",
-      language: "اللغة",
-      readMore: "اقرأ المزيد",
-      readLess: "عرض أقل"
-    },
+  title: "أعمال مختارة",
+  intro: "خمسة مواقع لخمسة أنشطة مختلفة. يتشكّل كل موقع وفق جمهوره ولغته وطريقة اتخاذ عملائه للقرار. اضغط على أي جهاز لمشاهدة العرض.",
+  viewDemo: "شاهد العرض",
+  openDemo: "افتح العرض:",
+  device: "الجهاز",
+  language: "اللغة",
+  readMore: "اقرأ المزيد",
+  readLess: "عرض أقل",
+  website: "الموقع الإلكتروني",
+  dashboard: "لوحة الإدارة"
+},
 
     devices: { phone: "هاتف ذكي", laptop: "حاسوب محمول" },
 
@@ -253,7 +257,7 @@ window.SAB_I18N = {
         cat: "عيادة تجميل",
         lang: "الإنجليزية",
         desc: "موقع أنيق لعيادة تجميل يحوّل تصفح العلاجات إلى مواعيد محجوزة.",
-        longDesc: "صُمم موقع JUDE Beauty Clinic لعيادة تجميل تأتي فيها المصداقية والوضوح في المقام الأول. تُعرض العلاجات والأطباء بمستوى من الإتقان يمنح المريض المحتمل الطمأنينة قبل أي تواصل، ومسار الحجز مصمم لإزالة أي عائق في اللحظة التي يقرر فيها الزائر الاهتمام. المعلومات منظمة بحيث يمكن للزائر إيجاد علاج محدد بسرعة دون التمرير عبر كل شيء. بالنسبة لصاحب العيادة، مثل هذا الموقع يقوم بمهمتين: يسوّق للعيادة على مدار الساعة، ويؤهل الاستفسارات مسبقًا، ليقضي الفريق وقتًا أقل في الإجابة عن أسئلة أساسية ووقتًا أكبر مع المرضى.",
+        longDesc: "تجمع JUDE Beauty Clinic بين موقع إلكتروني احترافي وتجربة إدارة مخصصة خلف الكواليس. يسهّل الموقع استعراض العلاجات والأطباء وحجز المواعيد، بينما تساعد لوحة الإدارة فريق العيادة على تنظيم المواعيد والمرضى والعلاجات والرسائل والعمليات اليومية. معًا، يقدم النظام تجربة رقمية تمثل العيادة بشكل احترافي وتدعم طريقة عملها اليومية.",
         alt: "موقع JUDE Beauty Clinic معروضًا على حاسوب محمول"
       },
       institute: {

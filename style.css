@@ -675,6 +675,81 @@ html[lang="ar"] .hero__title { font-size: clamp(2.3rem, 4.5vw, 4.5rem); }
 .ico-arrow { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; transform: scaleX(var(--dir)); }
 .ico-arrow--prev { transform: scaleX(calc(var(--dir) * -1)); }
 
+/* Demo view tabs */
+.modal__tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 0 0 18px;
+  border-bottom: 1px solid var(--line-light);
+}
+.modal__tabs[hidden] {
+  display: none !important;
+}
+
+.modal__tab {
+  position: relative;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: rgba(246, 243, 236, .52);
+  font: inherit;
+  font-size: .82rem;
+  font-weight: 500;
+  padding: 10px 14px 12px;
+  cursor: pointer;
+  transition: color .25s ease, background .25s ease;
+}
+
+.modal__tab::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: -1px;
+  height: 1px;
+  background: var(--gold-soft);
+  transform: scaleX(0);
+  transition: transform .3s var(--ease);
+}
+
+.modal__tab:hover {
+  color: var(--paper);
+  background: rgba(255, 255, 255, .04);
+}
+
+.modal__tab.is-active {
+  color: var(--gold-soft);
+  background: rgba(255, 255, 255, .06);
+}
+
+.modal__tab.is-active::after {
+  transform: scaleX(1);
+}
+
+.modal__tab:focus-visible {
+  outline: 1px solid var(--gold-soft);
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .modal__tabs {
+    width: 100%;
+  }
+
+  .modal__tab {
+    flex: 1;
+    font-size: .75rem;
+    padding-inline: 8px;
+  }
+
+  .modal__tab::after {
+    left: 8px;
+    right: 8px;
+  }
+}
+
 /* laptop demos: wide player on top, details underneath */
 .modal__panel[data-device="laptop"] {
   grid-template-columns: 1fr; width: min(1180px, 100%, max(380px, calc((100dvh - 270px) * 1.7778)));
