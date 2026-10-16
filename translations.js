@@ -72,7 +72,7 @@ window.SAB_I18N = {
     },
 work: {
   title: "Selected work",
-  intro: "Five websites for five different businesses. Each one is shaped by its audience, its language and the way its customers decide. Tap any device to watch the demo.",
+  intro: "Five demo websites created for different business types. These are concept projects, not real client websites. Tap any device to watch the demo.",
   viewDemo: "View Demo",
   openDemo: "Open demo:",
   device: "Device",
